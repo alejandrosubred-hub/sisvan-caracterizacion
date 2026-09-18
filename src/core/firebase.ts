@@ -58,5 +58,11 @@ export function authErrorMessage(e: unknown): string {
   if (code.includes('too-many-requests')) return 'Demasiados intentos. Espera unos minutos.';
   if (code.includes('network-request-failed')) return 'Sin conexión: no se pudo verificar el usuario.';
   if (code.includes('user-disabled')) return 'Esta cuenta está desactivada. Contacta al administrador.';
-  return 'No se pudo iniciar sesión.';
+  if (code.includes('operation-not-allowed')) return 'El método de acceso no está activado en Firebase (Authentication → Método de acceso).';
+  if (code.includes('unauthorized-domain')) return `Este dominio no está autorizado en Firebase: agrega "${window.location.hostname}" en Authentication → Configuración → Dominios autorizados.`;
+  if (code.includes('invalid-api-key') || code.includes('api-key-not-valid')) return 'La clave VITE_FIREBASE_API_KEY no es válida: revisa los secretos.';
+  if (code.includes('popup-blocked') || code.includes('popup-closed')) return 'El navegador bloqueó la ventana de Google. Usa usuario y contraseña o abre la app en una pestaña propia.';
+  if (code.includes('invalid-email')) return 'El correo no tiene un formato válido.';
+  const msg = (e as { message?: string }).message ?? '';
+  return `No se pudo iniciar sesión (${code || msg || 'error desconocido'}).`;
 }
