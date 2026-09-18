@@ -25,10 +25,11 @@ export default function App() {
 
   const records = useLiveQuery(() => db.records.where('formId').equals(formId).sortBy('UniqueKey'), [formId]) ?? [];
 
-  const notify = useCallback((m: string) => { setToast(m); window.setTimeout(() => setToast(null), 4000); }, []);
-  const onSynced = useCallback((r: SyncResult) => {
-    if (r.error) notify(`Sin sincronizar: ${r.error}`);
+  const notify = useCallback((m: string, ms = 4000) => { setToast(m); window.setTimeout(() => setToast(null), ms); }, []);
+  const onSynced = useCallback((r: SyncResult, manual = false) => {
+    if (r.error) notify(`Sin sincronizar: ${r.error}`, 12000);
     else if (r.pushed || r.pulled) notify(`Sincronizado · ${r.pushed} subidos, ${r.pulled} recibidos`);
+    else if (manual) notify('Sincronizado · sin cambios pendientes');
   }, [notify]);
 
   useEffect(() => watchUser(setUser), []);
@@ -115,7 +116,7 @@ export default function App() {
           {remoteEnabled ? (
             user
               ? <>
-                  <button type="button" onClick={() => syncForm(formId).then(onSynced)} disabled={!online}>Sincronizar{pendingCount ? ` (${pendingCount})` : ''}</button>
+                  <button type="button" onClick={() => { notify('Sincronizando…'); syncForm(formId).then(r => onSynced(r, true)); }} disabled={!online}>Sincronizar{pendingCount ? ` (${pendingCount})` : ''}</button>
                   <button type="button" className="link" onClick={logout}>{user.email} · salir</button>
                 </>
               : <button type="button" onClick={() => setShowLogin(true)}>Iniciar sesión</button>
