@@ -22,7 +22,9 @@ export async function syncForm(formId: string): Promise<SyncResult> {
     const pending = await db.records.where('_sync').equals('pending').and(x => x.formId === formId).toArray();
     for (const rec of pending) {
       const { _sync, ...payload } = rec;
-      await setDoc(doc(col, rec.GlobalRecordId), payload, { merge: true });
+      // Firestore rechaza valores undefined: se limpian (quedan como null o se omiten).
+      const clean = JSON.parse(JSON.stringify({ ...payload, updatedBy: payload.updatedBy ?? r.auth.currentUser.email ?? null }));
+      await setDoc(doc(col, rec.GlobalRecordId), clean, { merge: true });
       await db.records.update(rec.GlobalRecordId, { _sync: 'synced' });
       pushed++;
     }
@@ -42,8 +44,18 @@ export async function syncForm(formId: string): Promise<SyncResult> {
     await setMeta(`lastPull:${formId}`, maxSeen);
     return { pushed, pulled };
   } catch (e) {
-    return { pushed, pulled, error: (e as Error).message };
+    console.error('[sync]', e);
+    return { pushed, pulled, error: friendlySyncError(e) };
   }
+}
+
+function friendlySyncError(e: unknown): string {
+  const msg = (e as Error).message ?? String(e);
+  if (/permission|PERMISSION_DENIED/i.test(msg)) return 'Firebase negó el acceso: revisa que las reglas de Firestore estén publicadas y que la sesión siga activa.';
+  if (/not found|NOT_FOUND|does not exist/i.test(msg)) return 'No existe la base de datos Firestore en el proyecto: créala en Compilación → Firestore Database.';
+  if (/unavailable|network|offline/i.test(msg)) return 'Sin conexión con Firebase. Se reintentará al recuperar señal.';
+  if (/invalid data|Unsupported field value/i.test(msg)) return `Un registro tiene un valor que Firestore no acepta: ${msg}`;
+  return msg;
 }
 
 /** Sincroniza automáticamente al recuperar conexión. */
