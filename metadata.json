@@ -1,0 +1,5 @@
+{
+  "name": "SISVAN Caracterización",
+  "description": "Captura online/offline de las caracterizaciones SISVAN (menores de 5 años) con las reglas de Epi Info 7 y exportación a Excel.",
+  "requestFramePermissions": []
+}

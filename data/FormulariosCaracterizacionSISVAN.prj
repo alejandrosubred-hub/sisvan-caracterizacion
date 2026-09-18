@@ -1,0 +1,7 @@
+<Project id="177f1c96-60d2-c12a-d999-4ca7d85b1912" name="FormulariosCaracterizacionSISVAN" location="C:\Users\luiis\Downloads\EPIINFO\EPIINFO_V_7_17092025\FormCaracterizacionMenores5 V7_17092025" description="formulario alteraciones nutricionales menores de 5 años" schemaVersion="102" epiVersion="" createDate="02/04/2021 11:50:42" useMetadataDbForCollectedData="" useBackgroundOnAllPages="False">
+  <CollectedData>
+    <Database connectionString="zHDkaR2yI5Pbh2/LYHfZ7ljYKFwMFLb6TrxCvYEORi4jYREsaaOre37YThAPYOlGYsBgWStPlht/Npx5GrH7qAHLU5PYI/1vEymRxYzwFdpa5mL5zSOBLyCg6JjHWf/JAXo/69Ry1qenO38UgxNnDxnkCq4z3T5hc25e1xv2ZqAzZ/+n1oTYmP6O8LIW4JoniEWyzbNPkdvaQsqYp616BQ==" dataDriver="Epi.Data.Office.AccessDBFactory, Epi.Data.Office" />
+  </CollectedData>
+  <Metadata source="2" />
+  <EnterMakeviewInterpreter source="Epi.Core.EnterInterpreter" />
+</Project>

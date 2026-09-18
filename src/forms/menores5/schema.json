@@ -1,0 +1,2341 @@
+{
+ "view": "AltNutMen5",
+ "pages": [
+  {
+   "name": "Page 1",
+   "sections": [
+    {
+     "title": "1. DATOS DE CONTROL DE LA VISITA",
+     "fields": [
+      {
+       "name": "NumeroIdenMenor",
+       "type": "text",
+       "prompt": "Numero de identificación del menor",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 15
+      },
+      {
+       "name": "TipodeDocumento",
+       "type": "legal",
+       "prompt": "Tipo de Documento",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codetipodedocumento1",
+       "sourceColumn": "TipodeDocumento"
+      },
+      {
+       "name": "DxUPGD",
+       "type": "legal",
+       "prompt": "Diagnostico de la UPGD",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 10,
+       "source": "codedxupgd1",
+       "sourceColumn": "DxUPGD"
+      },
+      {
+       "name": "Nombre1",
+       "type": "text",
+       "prompt": "Nombre1",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "Nombre2",
+       "type": "text",
+       "prompt": "Nombre2",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "Apellido1",
+       "type": "text",
+       "prompt": "Apellido1",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "Apellido2",
+       "type": "text",
+       "prompt": "Apellido2",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "FechadeNacimiento",
+       "type": "date",
+       "prompt": "Fecha de Nacimiento",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "pattern": "YYYY-MM-DD"
+      },
+      {
+       "name": "Sexo12",
+       "type": "commentlegal",
+       "prompt": "Sexo",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codesexo122",
+       "sourceColumn": "Sexo12"
+      },
+      {
+       "name": "Fechadelavisita",
+       "type": "date",
+       "prompt": "Fecha de la visita",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "pattern": "YYYY-MM-DD"
+      },
+      {
+       "name": "EdadMeses",
+       "type": "number",
+       "prompt": "Edad Meses",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "pattern": "##.#"
+      },
+      {
+       "name": "NacionalidaddelMenor",
+       "type": "legal",
+       "prompt": "Nacionalidad del Menor",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": true,
+       "source": "codenacionalidaddelmenor1",
+       "sourceColumn": "NacionalidaddelMenor"
+      },
+      {
+       "name": "Observaciones",
+       "type": "text",
+       "prompt": "Observaciones",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 254
+      }
+     ]
+    },
+    {
+     "title": "",
+     "fields": [
+      {
+       "name": "DOCUMENTODELMENOR1",
+       "type": "mirror",
+       "prompt": "DOCUMENTO DEL MENOR",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "mirrorOf": "NumeroIdenMenor"
+      }
+     ]
+    },
+    {
+     "title": "2. INFORMACIÓN GENERAL",
+     "fields": [
+      {
+       "name": "LugardeCaracterizacin",
+       "type": "legal",
+       "prompt": "Lugar de Caracterización",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": true,
+       "source": "codelugardecaracterizacin1",
+       "sourceColumn": "LugardeCaracterizacin"
+      },
+      {
+       "name": "SubredqueNotifica",
+       "type": "legal",
+       "prompt": "Subred que Notifica",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": true,
+       "source": "codesubredquenotifica1",
+       "sourceColumn": "SubredqueNotifica"
+      },
+      {
+       "name": "SubredqueCaracteriza",
+       "type": "legal",
+       "prompt": "Subred que Caracteriza",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": true,
+       "source": "codesubredquecaracteriza1",
+       "sourceColumn": "SubredqueCaracteriza"
+      },
+      {
+       "name": "FechanotifUPGD",
+       "type": "date",
+       "prompt": "Fecha Notif. UPGD",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "pattern": "YYYY-MM-DD"
+      },
+      {
+       "name": "FecharecepcinSubred",
+       "type": "date",
+       "prompt": "Fecha Recp Subred:",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "pattern": "YYYY-MM-DD"
+      },
+      {
+       "name": "UPGDNotificadoraCodyNom",
+       "type": "legal",
+       "prompt": "UPGD Notificadora (Codigo y Nombre)",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeupgdnotificadoracodynom1",
+       "sourceColumn": "UPGDNotificadoraCodyNom"
+      },
+      {
+       "name": "EAPBPerteneciente",
+       "type": "legal",
+       "prompt": "EAPB Perteneciente",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeeapbperteneciente1",
+       "sourceColumn": "EAPBPerteneciente"
+      },
+      {
+       "name": "NomlocaliUPGD",
+       "type": "legal",
+       "prompt": "Nombre de localidad UPGD",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codenomlocaliupgd1",
+       "sourceColumn": "NomlocaliUPGD"
+      },
+      {
+       "name": "ServicioIdentif",
+       "type": "legal",
+       "prompt": "Servicio en el cual fue identificado",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeservicioidentif1",
+       "sourceColumn": "ServicioIdentif"
+      },
+      {
+       "name": "Cualotroservicio",
+       "type": "text",
+       "prompt": "Cual otro servicio",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 15
+      }
+     ]
+    },
+    {
+     "title": "3. UBICACION DE LA VIVENDA",
+     "fields": [
+      {
+       "name": "LocalidadVivienda",
+       "type": "legal",
+       "prompt": "Localidad de la Vivienda",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codelocalidadvivienda1",
+       "sourceColumn": "LocalidadVivienda"
+      },
+      {
+       "name": "UPZUPR",
+       "type": "legal",
+       "prompt": "UPZ/UPR",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeupzupr1",
+       "sourceColumn": "UPZUPR"
+      },
+      {
+       "name": "Barrio",
+       "type": "text",
+       "prompt": "Barrio",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 50
+      },
+      {
+       "name": "DireccinActualizada",
+       "type": "legal",
+       "prompt": "Dirección Actualizada",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codedireccinactualizada1",
+       "sourceColumn": "DireccinActualizada"
+      },
+      {
+       "name": "Ejeprincipal",
+       "type": "legal",
+       "prompt": "Eje principal",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeejeprincipal1",
+       "sourceColumn": "Ejeprincipal"
+      },
+      {
+       "name": "NUMERODIR1",
+       "type": "number",
+       "prompt": "NUM",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        0.0,
+        300.0
+       ],
+       "pattern": "###"
+      },
+      {
+       "name": "LETRADIR1",
+       "type": "text",
+       "prompt": "LETRA",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "BIS",
+       "type": "legal",
+       "prompt": "BIS",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codebis1",
+       "sourceColumn": "BIS"
+      },
+      {
+       "name": "LETRADIRBIS",
+       "type": "text",
+       "prompt": "LETRA",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "CUADRANTE1",
+       "type": "legal",
+       "prompt": "CUADRANTE 1",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codecuadrante11",
+       "sourceColumn": "CUADRANTE1"
+      },
+      {
+       "name": "NUMERODIR2",
+       "type": "number",
+       "prompt": "NUMERO",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        0.0,
+        300.0
+       ],
+       "pattern": "###"
+      },
+      {
+       "name": "LETRADIR2",
+       "type": "text",
+       "prompt": "LETRA",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "BIS2",
+       "type": "legal",
+       "prompt": "BIS",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codebis1",
+       "sourceColumn": "BIS"
+      },
+      {
+       "name": "LETRADIRBIS2",
+       "type": "text",
+       "prompt": "LETRA",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "NUMERODIR3",
+       "type": "number",
+       "prompt": "NUM",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        0.0,
+        300.0
+       ],
+       "pattern": "###"
+      },
+      {
+       "name": "CUADRANTE2",
+       "type": "legal",
+       "prompt": "CUADRANTE 2",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codecuadrante11",
+       "sourceColumn": "CUADRANTE1"
+      },
+      {
+       "name": "Complemento1",
+       "type": "text",
+       "prompt": "Complemento 1",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 25
+      },
+      {
+       "name": "Complemento2",
+       "type": "text",
+       "prompt": "Complemento 2",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 25
+      },
+      {
+       "name": "EstratoSocioeconomico",
+       "type": "number",
+       "prompt": "Estrato",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        0.0,
+        6.0
+       ],
+       "pattern": "#"
+      },
+      {
+       "name": "Nombrerecibelavista",
+       "type": "text",
+       "prompt": "Nombre de quien recibe la vista",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 30
+      },
+      {
+       "name": "TipoDocQienRecibeVista",
+       "type": "legal",
+       "prompt": "Tipo de Documento",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codetipodocqienrecibevista1",
+       "sourceColumn": "TipoDocQienRecibeVista"
+      },
+      {
+       "name": "NumeroDocRecibeVisita",
+       "type": "text",
+       "prompt": "Numero Documento",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 15
+      },
+      {
+       "name": "ParentescoQrecibeVista",
+       "type": "legal",
+       "prompt": "Parentesco con el niño o niña",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeparentescoqrecibevista1",
+       "sourceColumn": "ParentescoQrecibeVista"
+      },
+      {
+       "name": "NumerodeTelefono1",
+       "type": "phone",
+       "prompt": "Numero de Telefono 1",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "pattern": "###-###-####"
+      },
+      {
+       "name": "NumerodeTelefono2",
+       "type": "phone",
+       "prompt": "Numero de Telefono 2",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "pattern": "###-###-####"
+      }
+     ]
+    },
+    {
+     "title": "4. CONFORMACIÓN FAMILIAR",
+     "fields": [
+      {
+       "name": "NumerodePersonasenlaFamilia",
+       "type": "number",
+       "prompt": "Numero de Personas en la Familia",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        1.0,
+        25.0
+       ],
+       "pattern": "##"
+      },
+      {
+       "name": "TipodeFamilia",
+       "type": "legal",
+       "prompt": "Tipo de Familia",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codetipodefamilia1",
+       "sourceColumn": "TipodeFamilia"
+      },
+      {
+       "name": "PertenenciaEtnica",
+       "type": "legal",
+       "prompt": "Pertenencia Etnica",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codepertenenciaetnica1",
+       "sourceColumn": "PertenenciaEtnica"
+      },
+      {
+       "name": "PuebloIndigena",
+       "type": "legal",
+       "prompt": "Pueblo Indigena",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codepuebloindigena1",
+       "sourceColumn": "PuebloIndigena"
+      },
+      {
+       "name": "DesplazadosXviolencia",
+       "type": "legal",
+       "prompt": "Desplazados por la violencia",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "layout": "vertical",
+       "source": "codedesplazadosxviolencia1",
+       "sourceColumn": "DesplazadosXviolencia",
+       "options": [
+        "Si",
+        "No"
+       ]
+      },
+      {
+       "name": "Victimasconflicto",
+       "type": "legal",
+       "prompt": "Victimas del conflicto armado",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codevictimasconflicto1",
+       "sourceColumn": "Victimasconflicto"
+      },
+      {
+       "name": "NombredelamadreOtutor",
+       "type": "text",
+       "prompt": "Nombre de la madre o Tutor",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "TipodeDocMadre",
+       "type": "legal",
+       "prompt": "Tipo de Documento Madre o Tutor",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codetipodedocumento1",
+       "sourceColumn": "TipodeDocumento"
+      },
+      {
+       "name": "NumerodeDocMamTutor",
+       "type": "text",
+       "prompt": "Número de Documento Madre o Tutor",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 20
+      },
+      {
+       "name": "Cuidador",
+       "type": "legal",
+       "prompt": "Que persona cuida al niño generalmente?",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codecuidador1",
+       "sourceColumn": "Cuidador"
+      },
+      {
+       "name": "Edaddelcuidador",
+       "type": "number",
+       "prompt": "Edad del cuidador",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        5.0,
+        99.0
+       ],
+       "pattern": "##"
+      }
+     ]
+    },
+    {
+     "title": "FAMILIOGRAMA",
+     "fields": [
+      {
+       "name": "ObservacionesFamiliograma",
+       "type": "text",
+       "prompt": "Observaciones",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 30
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Page 2",
+   "sections": [
+    {
+     "title": "",
+     "fields": [
+      {
+       "name": "DOCUMENTODELMENOR",
+       "type": "mirror",
+       "prompt": "DOCUMENTO DEL MENOR",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "mirrorOf": "NumeroIdenMenor"
+      }
+     ]
+    },
+    {
+     "title": "5. SOPORTE FAMILIAR",
+     "fields": [
+      {
+       "name": "TipodeVivenda",
+       "type": "legal",
+       "prompt": "Tipo de Vivenda",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codetipodevivenda1",
+       "sourceColumn": "TipodeVivenda"
+      },
+      {
+       "name": "TnenciadelaVivenda",
+       "type": "legal",
+       "prompt": "Tenencia de la Vivenda",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codetnenciadelavivenda1",
+       "sourceColumn": "TnenciadelaVivenda"
+      },
+      {
+       "name": "Banocompartido",
+       "type": "legal",
+       "prompt": "El baño es compartido con otras familias?",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codebanocompartido1",
+       "sourceColumn": "Banocompartido"
+      },
+      {
+       "name": "Cuentaconcocina",
+       "type": "legal",
+       "prompt": "Cuenta con cocina para preparar alimentos?",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codebanocompartido1",
+       "sourceColumn": "Banocompartido"
+      },
+      {
+       "name": "Cocinaexclusiva",
+       "type": "legal",
+       "prompt": "La cocina es exclusiva para preparar alimentos?",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codecocinaexclusiva1",
+       "sourceColumn": "Cocinaexclusiva"
+      },
+      {
+       "name": "cocinaescompartida",
+       "type": "legal",
+       "prompt": "El espacio para cocinar es compartido?",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codecocinaescompartida1",
+       "sourceColumn": "cocinaescompartida"
+      },
+      {
+       "name": "ConqueCocinan",
+       "type": "legal",
+       "prompt": "Con que combustible cocinan?",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeconquecocinan1",
+       "sourceColumn": "ConqueCocinan"
+      },
+      {
+       "name": "NumeroIntegrantesHog",
+       "type": "number",
+       "prompt": "Cuantos Integrantes aportan económicamente?",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        1.0,
+        10.0
+       ],
+       "pattern": "##"
+      },
+      {
+       "name": "NiveleducativodelaMadre",
+       "type": "legal",
+       "prompt": "Nivel educativo de la Madre",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeniveleducativodelamadre1",
+       "sourceColumn": "NiveleducativodelaMadre"
+      }
+     ]
+    },
+    {
+     "title": "",
+     "fields": [
+      {
+       "name": "Cuantoinviertealimentacion",
+       "type": "option",
+       "prompt": "Aproximadamente ¿Cuánto invierten al mes, en alimentación? Valores en pesos",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "layout": "horizontal",
+       "options": [
+        "0 a 100 mil",
+        "100mil a 300mil",
+        "301mil a 500 mil",
+        "501mil a 700mil",
+        "701mil o más"
+       ]
+      },
+      {
+       "name": "Nivelingresosfamiliares",
+       "type": "option",
+       "prompt": "Entre las siguientes opciones aproximadamente como clasifica el nivel de ingresos familares?",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "layout": "vertical",
+       "options": [
+        "No Hay",
+        "< de 1/2 SMLV",
+        "1/2  a 1 SMLV",
+        "1 a 2 SMLV",
+        "> 2 SMLV",
+        "Sin Dato (No sabe)"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "6. PERCEPCIÓN DE INOCUIDAD EN EL HOGAR",
+     "fields": [
+      {
+       "name": "ConservacionAlimentos",
+       "type": "legal",
+       "prompt": "Cómo guarda los alimentos que se dañan más rápido como las carnes o los lacteos?",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeconservacionalimentos1",
+       "sourceColumn": "ConservacionAlimentos"
+      },
+      {
+       "name": "CualotroConservacion",
+       "type": "text",
+       "prompt": "Cual otro",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 25
+      },
+      {
+       "name": "LavadomanosManipAliment",
+       "type": "legal",
+       "prompt": "Acostumbra a lavarse las manos con frecuencia cuando esta manipulando alimentos?",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "layout": "horizontal",
+       "source": "codelavadomanosmanipaliment1",
+       "sourceColumn": "LavadomanosManipAliment",
+       "options": [
+        "Si",
+        "No"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Observación Directa",
+     "fields": [
+      {
+       "name": "EvalugoptimoAlimentos",
+       "type": "legal",
+       "prompt": "Evalúe el lugar para conservación de alimentos, preparación y consumo.",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeevalugoptimoalimentos1",
+       "sourceColumn": "EvalugoptimoAlimentos"
+      },
+      {
+       "name": "EvalualimpiezaVectores",
+       "type": "legal",
+       "prompt": "Evalúe iluminación, ventilación, limpieza, plagas, basuras y focos de contaminación.",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeevalualimpiezavectores1",
+       "sourceColumn": "EvalualimpiezaVectores"
+      },
+      {
+       "name": "Observacinocuidad",
+       "type": "text",
+       "prompt": "Observaciones",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 60
+      }
+     ]
+    },
+    {
+     "title": "7. ESCALA DE EXPERIENCIA DE INSEGURIDAD ALIMENTARIA (FIES)",
+     "fields": [
+      {
+       "name": "N1",
+       "type": "label",
+       "prompt": "Durante los últimos 12 meses, ha habido algún momento en que por falta de dinero u otros recursos:",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "FIES1Preocupado",
+       "type": "number",
+       "prompt": "1 Se haya preocupado por no tener suficientes alimentos para comer",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        0.0,
+        1.0
+       ],
+       "pattern": "#",
+       "source": "codefies11",
+       "sourceColumn": "FIES1"
+      },
+      {
+       "name": "FIES2PodidoComer",
+       "type": "number",
+       "prompt": "2 No haya podido comer alimentos sanos o nutritivos",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        0.0,
+        1.0
+       ],
+       "pattern": "#",
+       "source": "codefies2podidocomer1",
+       "sourceColumn": "FIES2PodidoComer"
+      },
+      {
+       "name": "FIES3PocaVariedad",
+       "type": "number",
+       "prompt": "3 Haya comido poca variedad de alimentos",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        0.0,
+        1.0
+       ],
+       "pattern": "#",
+       "source": "codefies3pocavariedad1",
+       "sourceColumn": "FIES3PocaVariedad"
+      },
+      {
+       "name": "FIES4Saltarse1comida",
+       "type": "number",
+       "prompt": "4 Haya tenido que saltarse una comida",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        0.0,
+        1.0
+       ],
+       "pattern": "#",
+       "source": "codefies4saltarse1comida1",
+       "sourceColumn": "FIES4Saltarse1comida"
+      },
+      {
+       "name": "FIES5ComidoMenos",
+       "type": "number",
+       "prompt": "5 Haya comido menos de lo que pensaba que debía comer",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        0.0,
+        1.0
+       ],
+       "pattern": "#",
+       "source": "codefies5comidomenos1",
+       "sourceColumn": "FIES5ComidoMenos"
+      },
+      {
+       "name": "FIES6HogarSinAlimentos",
+       "type": "number",
+       "prompt": "6 Su hogar se haya quedado sin alimentos",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        0.0,
+        1.0
+       ],
+       "pattern": "#",
+       "source": "codefies6hogarsinalimentos1",
+       "sourceColumn": "FIES6HogarSinAlimentos"
+      },
+      {
+       "name": "FIES7SentidoHambre",
+       "type": "number",
+       "prompt": "7 Haya sentido hambre pero no comió",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        0.0,
+        1.0
+       ],
+       "pattern": "#",
+       "source": "codefies7sentidohambre1",
+       "sourceColumn": "FIES7SentidoHambre"
+      },
+      {
+       "name": "FIES8DejadodeComer1dia",
+       "type": "number",
+       "prompt": "8 Haya dejado de comer durante todo un día",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        0.0,
+        1.0
+       ],
+       "pattern": "#",
+       "source": "codefies8dejadodecomer1dia1",
+       "sourceColumn": "FIES8DejadodeComer1dia"
+      },
+      {
+       "name": "ResultadoFIES",
+       "type": "number",
+       "prompt": "Resultado FIES",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "range": [
+        0.0,
+        8.0
+       ],
+       "pattern": "#"
+      },
+      {
+       "name": "InterpretacionFIES",
+       "type": "text",
+       "prompt": "Interpretacion FIES",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false
+      },
+      {
+       "name": "NivelINSAN",
+       "type": "text",
+       "prompt": "Nivel INSAN",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false
+      },
+      {
+       "name": "FIESObsservaciones",
+       "type": "text",
+       "prompt": "Observaciones FIES",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 50
+      },
+      {
+       "name": "Registrtelasrespuestascodificandodelasiguienteforma",
+       "type": "label",
+       "prompt": "Registrte las respuestas codificando de la siguiente forma:\r\n\r\n(1. = Si - 0 = No)",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "N8ANTECEDENTESNUTRICIONALES",
+       "type": "label",
+       "prompt": "8. ANTECEDENTES NUTRICIONALES",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      }
+     ]
+    },
+    {
+     "title": "Datos de Notificación",
+     "fields": [
+      {
+       "name": "TipodeNotificacion",
+       "type": "legal",
+       "prompt": "Tipo de Notificacion",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codetipodenotificacion1",
+       "sourceColumn": "TipodeNotificacion"
+      },
+      {
+       "name": "FechadeNotificacion2",
+       "type": "mirror",
+       "prompt": "Fecha de Notificación",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "mirrorOf": "FechanotifUPGD"
+      },
+      {
+       "name": "PesoNotif",
+       "type": "number",
+       "prompt": "Peso Kg",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        1.0,
+        50.0
+       ],
+       "pattern": "##.#"
+      },
+      {
+       "name": "PTZScoreNotif",
+       "type": "text",
+       "prompt": "P/T Z-Score",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 5
+      },
+      {
+       "name": "InterpretacionPTNotif",
+       "type": "legal",
+       "prompt": "InterpretacionP/T",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeinterpretacionptnotif1",
+       "sourceColumn": "InterpretacionPTNotif"
+      },
+      {
+       "name": "TallaNotif",
+       "type": "number",
+       "prompt": "Talla Cm",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        40.0,
+        120.0
+       ],
+       "pattern": "###.#"
+      },
+      {
+       "name": "TEZScoreNotif",
+       "type": "text",
+       "prompt": "T/E Z-Score",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 5
+      },
+      {
+       "name": "InterpretacionTEZ",
+       "type": "legal",
+       "prompt": "InterpretacionT/E",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeinterpretaciontez1",
+       "sourceColumn": "InterpretacionTEZ"
+      },
+      {
+       "name": "PerimBraquealNotf",
+       "type": "number",
+       "prompt": "Perimetro Brazo",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        5.0,
+        30.0
+       ],
+       "pattern": "##.#"
+      },
+      {
+       "name": "ClasificacionPBNotif",
+       "type": "legal",
+       "prompt": "ClasificacionPB",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeclasificacionpbnotif1",
+       "sourceColumn": "ClasificacionPBNotif"
+      }
+     ]
+    },
+    {
+     "title": "Antecedentes Neonatales",
+     "fields": [
+      {
+       "name": "Semanestacion",
+       "type": "number",
+       "prompt": "Semanas de gestacion al nacer",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        19.0,
+        45.0
+       ],
+       "pattern": "##"
+      },
+      {
+       "name": "Pesoalnacer",
+       "type": "number",
+       "prompt": "Peso al nacer en gramos",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        600.0,
+        6000.0
+       ],
+       "pattern": "####"
+      },
+      {
+       "name": "Longitudalnacer",
+       "type": "number",
+       "prompt": "Longitud al nacer en cm",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        30.0,
+        60.0
+       ],
+       "pattern": "##"
+      },
+      {
+       "name": "ComplicacionesNacer",
+       "type": "legal",
+       "prompt": "Complicaciones al nacer",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codecomplicacionesnacer1",
+       "sourceColumn": "ComplicacionesNacer"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Page 3",
+   "sections": [
+    {
+     "title": "",
+     "fields": [
+      {
+       "name": "DocumentodelmenorPG3",
+       "type": "mirror",
+       "prompt": "Documento del menor",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "mirrorOf": "NumeroIdenMenor"
+      }
+     ]
+    },
+    {
+     "title": "Antecedentes Patologicos",
+     "fields": [
+      {
+       "name": "AntPatologicos",
+       "type": "legal",
+       "prompt": "El niño/a padecio o padece de alguna de las siguientes enfermedades?",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeantpatologicos1",
+       "sourceColumn": "AntPatologicos"
+      },
+      {
+       "name": "Otroantecedentemdico",
+       "type": "text",
+       "prompt": "Otro antecedente médico que pudo afectar el estado nutricional",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 20
+      },
+      {
+       "name": "Hatenidohospitalicx",
+       "type": "legal",
+       "prompt": "Ha tenido hospitalizaciones o cirugías?",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codehatenidohospitali1",
+       "sourceColumn": "Hatenidohospitali"
+      },
+      {
+       "name": "MotivoHospCx",
+       "type": "text",
+       "prompt": "por que Motivo",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 20
+      },
+      {
+       "name": "EsquemaVacunacion",
+       "type": "legal",
+       "prompt": "Cuenta con esquema de vacunacion al dia de acuerdo a la edad?",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeesquemavacunacion1",
+       "sourceColumn": "EsquemaVacunacion"
+      }
+     ]
+    },
+    {
+     "title": "",
+     "fields": [
+      {
+       "name": "ProgramPrimerainf",
+       "type": "legal",
+       "prompt": "Asistencia a programas de primera infancia: jardín, salacuna, otros",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeprogramprimerainf1",
+       "sourceColumn": "ProgramPrimerainf"
+      },
+      {
+       "name": "NombreInstprog1inf",
+       "type": "text",
+       "prompt": "Nombre de la Institucion",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 40
+      },
+      {
+       "name": "VinculacinaProgramasSociales",
+       "type": "legal",
+       "prompt": "Vinculación a Programas Sociales",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codevinculacinaprogramassociales1",
+       "sourceColumn": "VinculacinaProgramasSociales"
+      },
+      {
+       "name": "CualotroProgSocial",
+       "type": "text",
+       "prompt": "Cual otro",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 20
+      }
+     ]
+    },
+    {
+     "title": "9. HÁBITOS ALIMENTARIOS",
+     "fields": [
+      {
+       "name": "LactanciaMaterna",
+       "type": "label",
+       "prompt": "Lactancia Materna",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "Iniciodelalactanciamaterna",
+       "type": "legal",
+       "prompt": "Inicio de la lactancia materna",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeiniciodelalactanciamaterna1",
+       "sourceColumn": "Iniciodelalactanciamaterna"
+      },
+      {
+       "name": "EdadExclusiva",
+       "type": "legal",
+       "prompt": "Hasta que edad recibió lactancia materna exclusiva el bebé?",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeedadexclusiva1",
+       "sourceColumn": "EdadExclusiva"
+      },
+      {
+       "name": "Lediofrmulalctea",
+       "type": "legal",
+       "prompt": "Le dio  fórmula láctea  al niñ@?",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codelediofrmulalctea1",
+       "sourceColumn": "Lediofrmulalctea"
+      },
+      {
+       "name": "EdadInicioFormula",
+       "type": "number",
+       "prompt": "Edad inició fórmula láctea? Meses (1 a 18)",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        1.0,
+        18.0
+       ],
+       "pattern": "##"
+      },
+      {
+       "name": "DiasInicioFormulaLactea",
+       "type": "number",
+       "prompt": "Dias (0 a 29)",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        0.0,
+        29.0
+       ],
+       "pattern": "##"
+      },
+      {
+       "name": "Edadiotrasbebidas",
+       "type": "number",
+       "prompt": "Edad en que recibió agua u otras bebidas               (meses de 1 a 9)",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        1.0,
+        9.0
+       ],
+       "pattern": "#"
+      },
+      {
+       "name": "EdadDiasIncioAguaoBebidas",
+       "type": "number",
+       "prompt": "Dias (de 0 a 29)",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        0.0,
+        29.0
+       ],
+       "pattern": "##"
+      },
+      {
+       "name": "Edadenqueledioaprobaroconsumialimentossemislidososlidos",
+       "type": "number",
+       "prompt": "Edad en meses en que le dio a probar o consumió alimentos semisólidos o sólidos? (de 0 a 18)",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        0.0,
+        18.0
+       ],
+       "pattern": "##"
+      },
+      {
+       "name": "ActualmenteConsumeLecheMaterna",
+       "type": "legal",
+       "prompt": "Actualmente Consume Leche Materna",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeactualmenteconsumelechematerna1",
+       "sourceColumn": "ActualmenteConsumeLecheMaterna"
+      },
+      {
+       "name": "LMcomplementaria",
+       "type": "legal",
+       "prompt": "Hasta que edad tomò leche materna (Duraciòn LM complementaria)",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codelmcomplementaria1",
+       "sourceColumn": "LMcomplementaria"
+      },
+      {
+       "name": "Frecuenciadeconsumodealimentosltimomes",
+       "type": "label",
+       "prompt": "Frecuencia de Consumo de Alimentos (último mes)",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "FCG1CRT",
+       "type": "legal",
+       "prompt": "G1.Cereales, Raíces, tubérculos y plátanos",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codefcg1crt1",
+       "sourceColumn": "FCG1CRT"
+      },
+      {
+       "name": "FCG2FrutasyV",
+       "type": "legal",
+       "prompt": "G2.Frutas y verduras",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codefcg2frutasyv1",
+       "sourceColumn": "FCG2FrutasyV"
+      },
+      {
+       "name": "FCG3Lecheyp",
+       "type": "legal",
+       "prompt": "G3.Leche y productos lácteos",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codefcg3lecheyp1",
+       "sourceColumn": "FCG3Lecheyp"
+      },
+      {
+       "name": "FCG4Carneshuevos",
+       "type": "legal",
+       "prompt": "G4.Carnes, huevos, leguminosas y semillas",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codefcg4carneshuevos1",
+       "sourceColumn": "FCG4Carneshuevos"
+      },
+      {
+       "name": "FCG5grasas",
+       "type": "legal",
+       "prompt": "G5.Grasas",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codefcg5grasas1",
+       "sourceColumn": "FCG5grasas"
+      },
+      {
+       "name": "Intolerancia",
+       "type": "legal",
+       "prompt": "El NN presenta intolerancia a algún alimento?",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeintolerancia1",
+       "sourceColumn": "Intolerancia"
+      },
+      {
+       "name": "FCG6Azcares",
+       "type": "legal",
+       "prompt": "G6.Azúcares",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codefcg6azcares1",
+       "sourceColumn": "FCG6Azcares"
+      },
+      {
+       "name": "CaulIntolerancialim",
+       "type": "text",
+       "prompt": "Cual alimento",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 15
+      },
+      {
+       "name": "lISTAFREQCONSUMO",
+       "type": "label",
+       "prompt": "1. Menos de 1 vez al mes  \r\n2. Una vez al mes \r\n3. Dos a tres veces al mes \r\n4. Una vez a la semana   \r\n5. Dos veces a la semana   \r\n6. Tres a cuatro veces a la semana \r\n7. Entre cinco y seis veces a la semana   \r\n8. Una vez al día   \r\n9. Dos  veces al día  \r\n10. Tres veces o más al día",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "Criteriohabitos",
+       "type": "legal",
+       "prompt": "Según su criterio profesional el menor presenta adecuados hábitos de alimentación?",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codecriteriohabitos1",
+       "sourceColumn": "Criteriohabitos"
+      },
+      {
+       "name": "CosnumoUsual",
+       "type": "label",
+       "prompt": "Describa el consumo de alimentos del día anterior. Indague tiempos de comida, porciones consumidas y preparación de alimentos (NO APLICA PARA PACIENTE HOSPITALIZADO)",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "PorqueCriterioHab",
+       "type": "text",
+       "prompt": "Por que",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      }
+     ]
+    },
+    {
+     "title": "10. ADHERENCIA AL LINEAMIENTO PARA EL MANEJO INTEGRAL DE LA DESNUTRICIÓN AGUDA \r\n(Si Aplica)",
+     "fields": [
+      {
+       "name": "Semanejintrahospitalariamente",
+       "type": "legal",
+       "prompt": "Se manejó intrahospitalariamente?",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "source": "codesemanejintrahospitalariamente1",
+       "sourceColumn": "Semanejintrahospitalariamente"
+      },
+      {
+       "name": "Serealizpruebadeapetito",
+       "type": "legal",
+       "prompt": "Se realizó prueba de apetito?",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "source": "codeserealizpruebadeapetito1",
+       "sourceColumn": "Serealizpruebadeapetito"
+      },
+      {
+       "name": "Acidoflico",
+       "type": "legal",
+       "prompt": "Acido fólico",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "source": "codeacidoflico1",
+       "sourceColumn": "Acidoflico"
+      },
+      {
+       "name": "Antibitico",
+       "type": "legal",
+       "prompt": "Antibiótico",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "source": "codeantibitico1",
+       "sourceColumn": "Antibitico"
+      },
+      {
+       "name": "EgresconFTLC",
+       "type": "legal",
+       "prompt": "Egresó con FTLC?",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "source": "codeegresconftlc1",
+       "sourceColumn": "EgresconFTLC"
+      },
+      {
+       "name": "EntregaFTLCambulatorio",
+       "type": "legal",
+       "prompt": "Entrega FTLC ambulatorio",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "source": "codeentregaftlcambulatorio1",
+       "sourceColumn": "EntregaFTLCambulatorio"
+      },
+      {
+       "name": "Entregadetratamientomanejodedesnutricinaguda",
+       "type": "label",
+       "prompt": "Entrega de tratamiento manejo de desnutrición aguda.",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "ActualmenteconsumelafrmulaFTLC",
+       "type": "legal",
+       "prompt": "Actualmente consume la fórmula FTLC?",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "source": "codeactualmenteconsumelafrmulaftlc1",
+       "sourceColumn": "ActualmenteconsumelafrmulaFTLC"
+      },
+      {
+       "name": "Quotraformula",
+       "type": "text",
+       "prompt": "Qué otra formula para complementación alimentaria prescribieron?",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "maxLength": 20
+      },
+      {
+       "name": "Tienebarrerasdeacce",
+       "type": "legal",
+       "prompt": "Tiene barreras de acceso para la atención o manejo de la desnutrición?",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "source": "codetienebarrerasdeacce1",
+       "sourceColumn": "Tienebarrerasdeacce"
+      },
+      {
+       "name": "CualesBarreras",
+       "type": "text",
+       "prompt": "Cuales Barreras",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "maxLength": 200
+      },
+      {
+       "name": "ObservacionesTretamiento",
+       "type": "text",
+       "prompt": "Observaciones",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "maxLength": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Page 4",
+   "sections": [
+    {
+     "title": "",
+     "fields": [
+      {
+       "name": "DocumentodelmenorPG31",
+       "type": "mirror",
+       "prompt": "Documento del menor",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "mirrorOf": "NumeroIdenMenor"
+      }
+     ]
+    },
+    {
+     "title": "11. VALORACIÓN ANTROPOMÉTRICA DEL NIÑO/NIÑA MENOR DE CINCO AÑOS",
+     "fields": [
+      {
+       "name": "EdadenMesesdx",
+       "type": "mirror",
+       "prompt": "Edad en Meses",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "pattern": "##",
+       "mirrorOf": "EdadMeses"
+      },
+      {
+       "name": "ZSocrePTActual",
+       "type": "number",
+       "prompt": "Z-SocreP/T",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "pattern": "##.######"
+      },
+      {
+       "name": "InterptretacionPTVisita",
+       "type": "text",
+       "prompt": "Interptretación P/T",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false
+      },
+      {
+       "name": "PesoActualKg",
+       "type": "number",
+       "prompt": "Peso Actual Kg",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        2.0,
+        50.0
+       ],
+       "pattern": "##.###"
+      },
+      {
+       "name": "TallaLongitudencm",
+       "type": "number",
+       "prompt": "Talla/Longitud en cm",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        35.0,
+        120.0
+       ],
+       "pattern": "###.#"
+      },
+      {
+       "name": "ZScoreTEAct",
+       "type": "number",
+       "prompt": "Z-ScoreT/E",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "pattern": "##.######"
+      },
+      {
+       "name": "TALLALONGITUD2",
+       "type": "number",
+       "prompt": ".",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "pattern": "###.#"
+      },
+      {
+       "name": "InterpretacionTEVisita",
+       "type": "text",
+       "prompt": "Interpretación T/E",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false
+      },
+      {
+       "name": "IMCActual",
+       "type": "number",
+       "prompt": "IMC",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "pattern": "##.#"
+      },
+      {
+       "name": "ZScoreIMCEVistia",
+       "type": "number",
+       "prompt": "Z-ScoreIMC/E",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "pattern": "##.######"
+      },
+      {
+       "name": "InterpretacionIMCEViista",
+       "type": "text",
+       "prompt": "Interpretación IMC/E",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false
+      },
+      {
+       "name": "Sexo",
+       "type": "mirror",
+       "prompt": "Sexo",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "mirrorOf": "Sexo12"
+      },
+      {
+       "name": "Perimetrocefalico",
+       "type": "number",
+       "prompt": "Perimetro cefalico",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "pattern": "##.#"
+      },
+      {
+       "name": "ZScorePCEAct",
+       "type": "number",
+       "prompt": "Z-ScorePC/E",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "pattern": "##.######"
+      },
+      {
+       "name": "InterpretacionPCEVisita",
+       "type": "text",
+       "prompt": "Interpretacion PC/E",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false
+      },
+      {
+       "name": "Perimetrodelbrazo",
+       "type": "number",
+       "prompt": "Perimetro del brazo",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "pattern": "##.#"
+      },
+      {
+       "name": "InterpretacionPerimetrodelBrazoVisita",
+       "type": "text",
+       "prompt": "Interpretacion PB/E",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false
+      }
+     ]
+    },
+    {
+     "title": "11.1 Valoracion de la Madre o Cuidador",
+     "fields": [
+      {
+       "name": "PesoAdultokg",
+       "type": "number",
+       "prompt": "Peso Kg",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        20.0,
+        150.0
+       ],
+       "pattern": "###.#"
+      },
+      {
+       "name": "TallaAdulto",
+       "type": "number",
+       "prompt": "Talla cm",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        130.0,
+        220.0
+       ],
+       "pattern": "###.#"
+      },
+      {
+       "name": "IMCAdulto",
+       "type": "number",
+       "prompt": "IMC",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false,
+       "pattern": "##.#"
+      },
+      {
+       "name": "SexoAdulto",
+       "type": "legal",
+       "prompt": "Sexo",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codesexoadulto1",
+       "sourceColumn": "SexoAdulto"
+      },
+      {
+       "name": "EdadCuidador2",
+       "type": "number",
+       "prompt": "Edad Años",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "range": [
+        15.0,
+        99.0
+       ],
+       "pattern": "##"
+      },
+      {
+       "name": "InterpIMCEAdulto",
+       "type": "text",
+       "prompt": "Interpretación IMC Adulto",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false
+      },
+      {
+       "name": "PerimetroCintura",
+       "type": "number",
+       "prompt": "Perimetro Cintura",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "pattern": "###.#"
+      },
+      {
+       "name": "InterpretacionCcinturaAdulto",
+       "type": "text",
+       "prompt": "Interpretaciòn C.Cintura Adulto",
+       "required": false,
+       "readOnly": true,
+       "repeatLast": false
+      }
+     ]
+    },
+    {
+     "title": "12. VALORACIÓN SUBJETIVA DE LA INTERVENCIÓN",
+     "fields": [
+      {
+       "name": "Plandeintervencin",
+       "type": "legal",
+       "prompt": "Principal Enfasis de las Recomendaciones Brindadas.",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "layout": "vertical",
+       "source": "codeplandeintervencin1",
+       "sourceColumn": "Plandeintervencin",
+       "options": [
+        "1. Educación pertinente a promoción de Salud",
+        "2. Pautas de Crianza",
+        "3. Consejería Lactancia Materna",
+        "4. Educación Alimentaria y Nutricional"
+       ]
+      },
+      {
+       "name": "DescribaPlanAlime",
+       "type": "label",
+       "prompt": "(Describa brevemente las recomendaciones y la educación brindada a la familia)",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "PlandeAlimentacionA",
+       "type": "text",
+       "prompt": "Recomendaciones individuales (a y b)",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 254
+      },
+      {
+       "name": "PlandeAlimentacionB",
+       "type": "text",
+       "prompt": ".",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "maxLength": 254
+      }
+     ]
+    },
+    {
+     "title": "13. NECESIDADES SOCIALES",
+     "fields": [
+      {
+       "name": "activacinderuta",
+       "type": "legal",
+       "prompt": "Se realiza activación de ruta por alguna necesidad en salud identificada?",
+       "required": true,
+       "readOnly": false,
+       "repeatLast": false,
+       "source": "codeactivacinderuta1",
+       "sourceColumn": "activacinderuta"
+      },
+      {
+       "name": "EntidadalaqueseCanaliz",
+       "type": "option",
+       "prompt": "Entidad a la que se Canalizó",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false,
+       "layout": "vertical",
+       "source": "codeentidadalaquesecanaliz1",
+       "sourceColumn": "EntidadalaqueseCanaliz",
+       "options": [
+        "SDIS",
+        "ICBF",
+        "S MUJER",
+        "SDE",
+        "OTRO"
+       ]
+      },
+      {
+       "name": "CualotrEntidad",
+       "type": "text",
+       "prompt": "Cual",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      }
+     ]
+    },
+    {
+     "title": "14. QUIENES PARTICIPARON EN LA VISITA",
+     "fields": [
+      {
+       "name": "Encasodeencontrarsehospitalizada",
+       "type": "label",
+       "prompt": "Profesional de la institución con quien se retroalimentó iec institucional (En caso de encontrarse hospitalizada)",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "Firma",
+       "type": "label",
+       "prompt": "Firma",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "NombreyApellidospprofH",
+       "type": "text",
+       "prompt": "Nombre y Apellidos:",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "CargoprofrecibvisitaH",
+       "type": "text",
+       "prompt": "Cargo",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "Nombredequienrecibelavista",
+       "type": "text",
+       "prompt": "Nombre de quien recibe la vista",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "NumerodeCedularecibevista",
+       "type": "text",
+       "prompt": "Tipo y Numero de Documento",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "Firmadelquienrecibelavisita",
+       "type": "label",
+       "prompt": "Firma de quien recibe la visita.",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "NombredelProfesionalquerealizolavisita",
+       "type": "text",
+       "prompt": "Nombre del Profesional que realizo la visita",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "NmdeCedulaprofRVisita",
+       "type": "number",
+       "prompt": "Núm. de Cedula",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      },
+      {
+       "name": "NumTP",
+       "type": "number",
+       "prompt": "Núm. TP",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      }
+     ]
+    },
+    {
+     "title": "",
+     "fields": [
+      {
+       "name": "GuardarRegistro",
+       "type": "button",
+       "prompt": "Guardar Registro",
+       "required": false,
+       "readOnly": false,
+       "repeatLast": false
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "storedFields": [
+  "InterpretacionFIES",
+  "NivelINSAN",
+  "DiasInicioFormulaLactea",
+  "EdadDiasIncioAguaoBebidas",
+  "NiveleducativodelaMadre",
+  "ActualmenteConsumeLecheMaterna",
+  "UniqueKey",
+  "RECSTATUS",
+  "GlobalRecordId",
+  "NumeroIdenMenor",
+  "Nombre1",
+  "Nombre2",
+  "Apellido1",
+  "Apellido2",
+  "TipodeDocumento",
+  "FechadeNacimiento",
+  "DxUPGD",
+  "Observaciones",
+  "Fechadelavisita",
+  "LugardeCaracterizacin",
+  "SubredqueNotifica",
+  "EAPBPerteneciente",
+  "FechanotifUPGD",
+  "FecharecepcinSubred",
+  "NomlocaliUPGD",
+  "ServicioIdentif",
+  "Cualotroservicio",
+  "LocalidadVivienda",
+  "UPZUPR",
+  "Barrio",
+  "DireccinActualizada",
+  "Ejeprincipal",
+  "NUMERODIR1",
+  "LETRADIR1",
+  "BIS",
+  "CUADRANTE1",
+  "NUMERODIR2",
+  "LETRADIR2",
+  "NUMERODIR3",
+  "CUADRANTE2",
+  "Complemento1",
+  "Complemento2",
+  "EstratoSocioeconomico",
+  "Nombrerecibelavista",
+  "TipoDocQienRecibeVista",
+  "NumeroDocRecibeVisita",
+  "ParentescoQrecibeVista",
+  "NumerodeTelefono1",
+  "NumerodeTelefono2",
+  "TipodeFamilia",
+  "NumerodePersonasenlaFamilia",
+  "PertenenciaEtnica",
+  "PuebloIndigena",
+  "DesplazadosXviolencia",
+  "Victimasconflicto",
+  "Cuidador",
+  "Edaddelcuidador",
+  "NombredelamadreOtutor",
+  "TipodeDocMadre",
+  "NumerodeDocMamTutor",
+  "ObservacionesFamiliograma",
+  "TipodeVivenda",
+  "TnenciadelaVivenda",
+  "Banocompartido",
+  "Cuentaconcocina",
+  "Cocinaexclusiva",
+  "cocinaescompartida",
+  "ConqueCocinan",
+  "Nivelingresosfamiliares",
+  "NumeroIntegrantesHog",
+  "Cuantoinviertealimentacion",
+  "ConservacionAlimentos",
+  "CualotroConservacion",
+  "LavadomanosManipAliment",
+  "EvalugoptimoAlimentos",
+  "EvalualimpiezaVectores",
+  "Observacinocuidad",
+  "FIES1Preocupado",
+  "FIES2PodidoComer",
+  "FIES3PocaVariedad",
+  "FIES4Saltarse1comida",
+  "FIES5ComidoMenos",
+  "FIES6HogarSinAlimentos",
+  "FIES7SentidoHambre",
+  "FIES8DejadodeComer1dia",
+  "FIESObsservaciones",
+  "TipodeNotificacion",
+  "PesoNotif",
+  "TallaNotif",
+  "PerimBraquealNotf",
+  "PTZScoreNotif",
+  "InterpretacionPTNotif",
+  "TEZScoreNotif",
+  "InterpretacionTEZ",
+  "ClasificacionPBNotif",
+  "Semanestacion",
+  "Pesoalnacer",
+  "Longitudalnacer",
+  "ComplicacionesNacer",
+  "AntPatologicos",
+  "Otroantecedentemdico",
+  "Hatenidohospitalicx",
+  "MotivoHospCx",
+  "ProgramPrimerainf",
+  "NombreInstprog1inf",
+  "VinculacinaProgramasSociales",
+  "CualotroProgSocial",
+  "Iniciodelalactanciamaterna",
+  "EdadExclusiva",
+  "Lediofrmulalctea",
+  "EdadInicioFormula",
+  "Edadiotrasbebidas",
+  "Edadenqueledioaprobaroconsumialimentossemislidososlidos",
+  "FCG1CRT",
+  "FCG2FrutasyV",
+  "FCG3Lecheyp",
+  "FCG4Carneshuevos",
+  "FCG5grasas",
+  "FCG6Azcares",
+  "Intolerancia",
+  "CaulIntolerancialim",
+  "Criteriohabitos",
+  "PorqueCriterioHab",
+  "Semanejintrahospitalariamente",
+  "Serealizpruebadeapetito",
+  "Acidoflico",
+  "Antibitico",
+  "EgresconFTLC",
+  "EntregaFTLCambulatorio",
+  "ActualmenteconsumelafrmulaFTLC",
+  "Quotraformula",
+  "Tienebarrerasdeacce",
+  "CualesBarreras",
+  "ObservacionesTretamiento",
+  "PesoActualKg",
+  "TallaLongitudencm",
+  "IMCActual",
+  "Perimetrocefalico",
+  "Perimetrodelbrazo",
+  "ZSocrePTActual",
+  "InterptretacionPTVisita",
+  "Sexo12",
+  "EdadMeses",
+  "ZScoreTEAct",
+  "InterpretacionTEVisita",
+  "ZScoreIMCEVistia",
+  "InterpretacionIMCEViista",
+  "InterpretacionPerimetrodelBrazoVisita",
+  "ZScorePCEAct",
+  "InterpretacionPCEVisita",
+  "Plandeintervencin",
+  "PlandeAlimentacionA",
+  "activacinderuta",
+  "EntidadalaqueseCanaliz",
+  "NombreyApellidospprofH",
+  "CargoprofrecibvisitaH",
+  "NumerodeCedularecibevista",
+  "Nombredequienrecibelavista",
+  "NombredelProfesionalquerealizolavisita",
+  "NmdeCedulaprofRVisita",
+  "NumTP",
+  "CualotrEntidad",
+  "NacionalidaddelMenor",
+  "PlandeAlimentacionB",
+  "TALLALONGITUD2",
+  "LETRADIRBIS",
+  "UPGDNotificadoraCodyNom",
+  "SubredqueCaracteriza",
+  "BIS2",
+  "LETRADIRBIS2",
+  "EsquemaVacunacion",
+  "LMcomplementaria",
+  "PesoAdultokg",
+  "TallaAdulto",
+  "IMCAdulto",
+  "InterpIMCEAdulto",
+  "EdadCuidador2",
+  "PerimetroCintura",
+  "SexoAdulto",
+  "InterpretacionCcinturaAdulto",
+  "ResultadoFIES"
+ ]
+}
